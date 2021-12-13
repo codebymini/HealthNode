@@ -1,0 +1,41 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: healthnode
+  namespace: healthnode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthnode
+  template:
+    metadata:
+      labels:
+        app: healthnode
+    spec:
+      containers:
+      - name: healthnode
+        image: codebymini/healthnode
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 3000
+          hostPort: 3000
+        env:
+        - name: APIKEY
+          value: "YOUR_API_KEY"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthnode-app
+  namespace: healthnode
+spec:
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  selector:
+    app: healthnode

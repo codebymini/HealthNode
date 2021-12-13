@@ -1,0 +1,41 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: healthnode-api
+  namespace: healthnode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthnode-api
+  template:
+    metadata:
+      labels:
+        app: healthnode-api
+    spec:
+      containers:
+      - name: healthnode-api
+        image: codebymini/healthnodeapi
+        imagePullPolicy: Always
+        env:
+        - name: APIKEY
+          value: "YOUR_API_KEY"
+        - name: MONGODB
+          value: "mongodb+srv://USERNAME:PASSWORD@cluster.wxvm2.mongodb.net/DATABASE?retryWrites=true&w=majority"
+        ports:
+        - name: http
+          containerPort: 3333
+          hostPort: 3333
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthnode-api-service
+  namespace: healthnode
+spec:
+  type: NodePort
+  ports:
+    - port: 3333
+  selector:
+    app: healthnode-api
