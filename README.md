@@ -143,6 +143,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Daniel Mini Johansson - daniel@codebymini.se
+
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 Project Link: [https://github.com/codebymini/healthnode](https://github.com/codebymini/healthnode)
