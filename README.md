@@ -77,13 +77,54 @@ This is a multipart project containing an iPhone app, Back- and Front-end in Nod
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The following instructions is for setting this project up locally. However, The main project is built on <a href="https://www.linode.com/">Linode</a>
+The following instructions is for setting this project up locally. However, The main project is built on <a href="https://www.linode.com/">Linode</a> utilizing a Linode 2 GB with Ubuntu 21.10 installed.
+<br />
+<br />
 
 ### Prerequisites
-
+A linux machine, virtual, physical or cloudbased.
+MicroK8s runs in as little as 540MB but more RAM is recommended
 
 
 ### Installation
+Updates the package lists
+
+```sudo apt-get update```
+
+Install microk8s with snap
+
+```sudo snap install microk8s --classic```
+
+Add user to group
+
+```sudo usermod -a -G microk8s $USER```
+
+Set access to .-kube
+
+```sudo chown -f -R $USER ~/.kube```
+
+Re-enter session
+
+```su - $USER```
+
+Set the alias for kubectl
+
+```alias kubectl='microk8s kubectl'```
+
+Clone the repo containing the kubernetes deployment files
+
+```git clone https://github.com/CodeByMini/HealthNode```
+
+Go to the folder
+
+```cd HealthNode```
+
+Deploy the files with:
+
+```kubectl apply -f 1-namespace.yaml```
+```kubectl apply -f 3-healthnodeapi.yaml```
+```kubectl apply -f 4-healthnode.yaml```
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
