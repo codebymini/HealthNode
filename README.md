@@ -96,8 +96,8 @@ The following instructions is for setting up this project locally. However, The 
 
 * <a id="TRYING_TO_CHEAT">Atlas Mongo DB </a>
   - Set up a free tier cluster at <a href="https://www.mongodb.com/cloud/atlas/register">https://www.mongodb.com/cloud/atlas/register</a>
-  - Click on connect <img src="images/connect.png">
-  - Select Node.js and copy the connection string. You will need it later: <img src="images/mongodb.png">
+  - Click on connect <img src="images/connect.png" height="100">
+  - Select Node.js and copy the connection string. You will need it later: <img src="images/mongodb.png" height="250">
 
 
 ### Installation
@@ -169,15 +169,17 @@ Clone the iPhone repo and build it with Xcode.
 
 
 ## Usage
-<img src="images/app.jpeg" alt="app"  height="300">
+<center><img src="images/app.jpeg" alt="app"  height="400"></center>
 
 When the app is started fill in the lines for:
 - Host adress
   - This will be the ipadress of the machine running kubernetes.
 - Upload port
-  - When running the command ```kubectl get services --namespace=healthnode``` the console will show: <img src="images/console.png" alt="app"> The number after 3333: is the upload port
+  - When running the command ```kubectl get services --namespace=healthnode``` the console will show: 
+  <img src="images/console.png" alt="app"> The number after 3333: is the upload port
 
 - View port
+
   Same as above but the number after 3000: is the view port
 - Api key
   - This is the APIKEY variable in <a href="https://github.com/CodeByMini/HealthNode/blob/master/3-healthnodeapi.yaml">3-healthnodeapi.yaml</a>
