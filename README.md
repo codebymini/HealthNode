@@ -144,7 +144,7 @@ Remember the connection string from earlier? Now its time to use it.
 
 (if this step was skipped take a <a href="#TRYING_TO_CHEAT">ride there now</a>)
 
-Edit 3-healthnodeapi.yaml and change the value for MONGODB
+Edit 3-healthnodeapi.yaml and change the value for MONGODB. Make sure to change ```<password>``` to ```your_password``` removing the <>
 <img src="images/editenv.png">
 Take this chance to change the APIKEY value to something harder to guess than YOUR_API_KEY.
 
