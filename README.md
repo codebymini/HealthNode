@@ -98,7 +98,9 @@ The following instructions is for setting up this project locally. However, The 
   - Set up a free tier cluster at <a href="https://www.mongodb.com/cloud/atlas/register">https://www.mongodb.com/cloud/atlas/register</a>
   - Click on connect 
   <img src="images/connect.png" height="100">
-  - Select Node.js and copy the connection string. You will need it later: <img src="images/mongodb.png" height="350">
+
+  - Select Node.js and copy the connection string. You will need it later:
+  <img src="images/mongodb.png" height="350">
 
 
 ### Installation
