@@ -25,8 +25,6 @@
 
 
 
-
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -54,36 +52,52 @@
 <br />
 
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 This is a multipart project containing an iPhone app, Back- and Front-end in Node.js and Kubernetes deployment definitions. It also utilize a Atlas MongoDB.
 
+The repositories used in this project:
+* <a href="https://github.com/CodeByMini/HealthNode">HealthNode</a>
+* <a href="https://github.com/CodeByMini/HealthNodeApp">HealthNodeApp</a>
+* <a href="https://github.com/CodeByMini/HealthNodeApi">HealthNodeApi</a>
+* <a href="https://github.com/CodeByMini/HealthNodeWeb">HealthNodeWeb</a>
+
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## System Overview
+<img src="images/system-overview.png">
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 * [MicroK8s](https://microk8s.io/)
 * [Atlas MongoDB](https://www.mongodb.com/atlas/)
 * [React.js](https://reactjs.org/)
-* [Xcode](https://developer.apple.com/xcode/)
+* [Xcode](https://developer.apple.com/xcode/) and [Swift](https://developer.apple.com/swift/)
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
-The following instructions is for setting this project up locally. However, The main project is built on <a href="https://www.linode.com/">Linode</a> utilizing a Linode 2 GB with Ubuntu 21.10 installed.
+The following instructions is for setting up this project locally. However, The main project is built on <a href="https://www.linode.com/">Linode</a> utilizing a Linode 2 GB with Ubuntu 21.10 installed.
 <br />
 <br />
 
 ### Prerequisites
-A linux machine, virtual, physical or cloudbased.
-MicroK8s runs in as little as 540MB but more RAM is recommended
+* Linux machine, virtual, physical or cloudbased.
+(It has been tested on Ubuntu 21.10)
+
+  - MicroK8s runs in as little as 540MB but more RAM is recommended
+
+* <a id="TRYING_TO_CHEAT">Atlas Mongo DB </a>
+  - Set up a free tier cluster at <a href="https://www.mongodb.com/cloud/atlas/register">https://www.mongodb.com/cloud/atlas/register</a>
+  - Click on connect <img src="images/connect.png">
+  - Select Node.js and copy the connection string. You will need it later: <img src="images/mongodb.png">
 
 
 ### Installation
@@ -122,38 +136,73 @@ Go to the folder
 Deploy the files with:
 
 ```kubectl apply -f 1-namespace.yaml```
+
+Remember the connection string from earlier? Now its time to use it. 
+
+(if this step was skipped take a <a href="#TRYING_TO_CHEAT">ride there now</a>)
+
+Edit 3-healthnodeapi.yaml and change the value for MONGODB
+<img src="images/editenv.png">
+Take this chance to change the APIKEY value to something harder to guess than YOUR_API_KEY.
+
+Then continue with the deployment:
+
 ```kubectl apply -f 3-healthnodeapi.yaml```
+
 ```kubectl apply -f 4-healthnode.yaml```
 
+Check ports with:
+
+```kubectl get services --namespace=healthnode```
+
+Clone the iPhone repo and build it with Xcode.
+
+```git clone https://github.com/CodeByMini/HealthNodeApp```
+
+>Here's a link that describes how to set up a developer account and build an app for iPhone: https://www.youtube.com/watch?v=bqh6YaMxgbE&ab_channel=ThePugEngineer
+ Skip the steps for creating an app, and clone the repo instead.
+ ```git clone https://github.com/CodeByMini/HealthNodeApp```
+>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-<!-- USAGE EXAMPLES -->
 ## Usage
+<img src="images/app.jpeg" alt="app"  height="300">
+
+When the app is started fill in the lines for:
+- Host adress
+  - This will be the ipadress of the machine running kubernetes.
+- Upload port
+  - When running the command ```kubectl get services --namespace=healthnode``` the console will show: <img src="images/console.png" alt="app"> The number after 3333: is the upload port
+
+- View port
+  Same as above but the number after 3000: is the view port
+- Api key
+  - This is the APIKEY variable in <a href="https://github.com/CodeByMini/HealthNode/blob/master/3-healthnodeapi.yaml">3-healthnodeapi.yaml</a>
+- Nightscout name
+  - If the nightscoutadress is https://xxxx.herokuapp.com, then fill in xxxx here.
+
+- Click Upload button in app. Protip: Make use of iPhone integration with a Mac and send the webpage via AirDrop to watch the graph on a bigger screen
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- ROADMAP -->
 ## Roadmap
 
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
+- Static portnumbers
+- Scaleability
+- Security
 
 See the [open issues](https://github.com/codebymini/healthnode/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -171,7 +220,6 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-<!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -180,7 +228,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 
-<!-- CONTACT -->
 ## Contact
 
 Daniel Mini Johansson - daniel@codebymini.se
