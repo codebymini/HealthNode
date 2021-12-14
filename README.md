@@ -96,8 +96,9 @@ The following instructions is for setting up this project locally. However, The 
 
 * <a id="TRYING_TO_CHEAT">Atlas Mongo DB </a>
   - Set up a free tier cluster at <a href="https://www.mongodb.com/cloud/atlas/register">https://www.mongodb.com/cloud/atlas/register</a>
-  - Click on connect <img src="images/connect.png" height="100">
-  - Select Node.js and copy the connection string. You will need it later: <img src="images/mongodb.png" height="250">
+  - Click on connect 
+  <img src="images/connect.png" height="100">
+  - Select Node.js and copy the connection string. You will need it later: <img src="images/mongodb.png" height="350">
 
 
 ### Installation
@@ -169,7 +170,7 @@ Clone the iPhone repo and build it with Xcode.
 
 
 ## Usage
-<center><img src="images/app.jpeg" alt="app"  height="400"></center>
+<div align="center"><img src="images/app.jpeg" alt="app"  height="400"></div>
 
 When the app is started fill in the lines for:
 - Host adress
