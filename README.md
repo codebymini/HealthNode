@@ -163,8 +163,10 @@ Clone the iPhone repo and build it with Xcode.
 ```git clone https://github.com/CodeByMini/HealthNodeApp```
 
 >Here's a link that describes how to set up a developer account and build an app for iPhone: https://www.youtube.com/watch?v=bqh6YaMxgbE&ab_channel=ThePugEngineer
- Skip the steps for creating an app, and clone the repo instead.
- ```git clone https://github.com/CodeByMini/HealthNodeApp```
+
+ >Skip the steps for creating the app, and clone the repo instead.
+ 
+ >```git clone https://github.com/CodeByMini/HealthNodeApp```
 >
 
 
@@ -241,33 +243,15 @@ Daniel Mini Johansson - daniel@codebymini.se
 
 Project Link: [https://github.com/codebymini/healthnode](https://github.com/codebymini/healthnode)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+## Thanks
+<a href="https://github.com/voxic/">voxic</a>
 
-
-
-<!-- ACKNOWLEDGMENTS 
-## Acknowledgments
-
-* []()
-* []()
-* []()
+<a href="https://github.com/jh83/">jh83</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
--->
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/codebymini/healthnode.svg?style=for-the-badge
-[contributors-url]: https://github.com/codebymini/healthnode/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/codebymini/healthnode.svg?style=for-the-badge
-[forks-url]: https://github.com/codebymini/healthnode/network/members
-[stars-shield]: https://img.shields.io/github/stars/codebymini/healthnode.svg?style=for-the-badge
-[stars-url]: https://github.com/codebymini/healthnode/stargazers
-[issues-shield]: https://img.shields.io/github/issues/codebymini/healthnode.svg?style=for-the-badge
-[issues-url]: https://github.com/codebymini/healthnode/issues
 [license-shield]: https://img.shields.io/github/license/codebymini/healthnode.svg?style=for-the-badge
 [license-url]: https://github.com/codebymini/healthnode/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/https://www.linkedin.com/in/daniel-johansson-4b099219a/
-[product-screenshot]: images/screenshot.png
