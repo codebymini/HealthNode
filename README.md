@@ -128,6 +128,9 @@ Set the alias for kubectl
 
 ```alias kubectl='microk8s kubectl'```
 
+Enable DNS, Storage, Dashboard and Ingress
+```microk8s enable dns storage dashboard ingress```
+
 Clone the repo containing the kubernetes deployment files
 
 ```git clone https://github.com/CodeByMini/HealthNode```

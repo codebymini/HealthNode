@@ -24,6 +24,8 @@ spec:
         env:
         - name: APIKEY
           value: "YOUR_API_KEY"
+        - name: URL
+          value: "http://healthnode-api-service:3333/getrecords/"
 
 ---
 apiVersion: v1
@@ -32,7 +34,7 @@ metadata:
   name: healthnode-app
   namespace: healthnode
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
     - protocol: TCP
       port: 3000

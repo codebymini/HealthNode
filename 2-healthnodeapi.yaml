@@ -21,11 +21,13 @@ spec:
         - name: APIKEY
           value: "YOUR_API_KEY"
         - name: MONGODB
-          value: "mongodb+srv://USERNAME:PASSWORD@cluster.wxvm2.mongodb.net/DATABASE?retryWrites=true&w=majority"
+          value: "YOUR-MONGODB-CONNECTION-STRING"
         ports:
         - name: http
           containerPort: 3333
           hostPort: 3333
+      imagePullSecrets:
+      - name: regcred
 
 ---
 apiVersion: v1
@@ -34,7 +36,7 @@ metadata:
   name: healthnode-api-service
   namespace: healthnode
 spec:
-  type: NodePort
+  type: CLusterIP
   ports:
     - port: 3333
   selector:
