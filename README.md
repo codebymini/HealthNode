@@ -74,7 +74,8 @@ The repositories used in this project:
 ### Built With
 * [MicroK8s](https://microk8s.io/)
 * [Atlas MongoDB](https://www.mongodb.com/atlas/)
-* [React.js](https://reactjs.org/)
+* [Node.js](https://nodejs.dev/)
+* [EJS](https://ejs.co/)
 * [Xcode](https://developer.apple.com/xcode/) and [Swift](https://developer.apple.com/swift/)
 
 
