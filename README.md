@@ -78,6 +78,11 @@ The repositories used in this project:
 * [EJS](https://ejs.co/)
 * [Xcode](https://developer.apple.com/xcode/) and [Swift](https://developer.apple.com/swift/)
 
+**Note:**
+
+This projects collects data from a Nightscout instance. More information on how to set up Nightscout is found here:
+* [Nightscout](http://www.nightscout.info/)
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -154,13 +159,12 @@ Take this chance to change the APIKEY value to something harder to guess than YO
 
 Then continue with the deployment:
 
-```kubectl apply -f 3-healthnodeapi.yaml```
+```kubectl apply -f 2-healthnodeapi.yaml```
 
-```kubectl apply -f 4-healthnode.yaml```
+```kubectl apply -f 3-healthnode.yaml```
 
-Check ports with:
+```kubectl apply -f 4-ingress.yaml```
 
-```kubectl get services --namespace=healthnode```
 
 Clone the iPhone repo and build it with Xcode.
 
@@ -183,13 +187,7 @@ Clone the iPhone repo and build it with Xcode.
 When the app is started fill in the lines for:
 - Host adress
   - This will be the ipadress of the machine running kubernetes.
-- Upload port
-  - When running the command ```kubectl get services --namespace=healthnode``` the console will show: 
-  <img src="images/console.png" alt="app"> The number after 3333: is the upload port
 
-- View port
-
-  Same as above but the number after 3000: is the view port
 - Api key
   - This is the APIKEY variable in <a href="https://github.com/CodeByMini/HealthNode/blob/master/3-healthnodeapi.yaml">3-healthnodeapi.yaml</a>
 - Nightscout name
@@ -201,13 +199,17 @@ When the app is started fill in the lines for:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 ## Roadmap
 
-- Static portnumbers
-- Scaleability
 - Security
+  - Make use of https with certificates in both api and front-end
+  - Hide the APIKEY and MONGODB connection string with regcred
+
+- Persitant Volume Claim
+  - Use part of the harddrive where the kluster is deployed for a local MongoDB instance
+
+- Scaleability
+  - Use a loadbalancer and scale up the front end and api with more replicas
 
 See the [open issues](https://github.com/codebymini/healthnode/issues) for a full list of proposed features (and known issues).
 
